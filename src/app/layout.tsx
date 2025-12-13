@@ -157,7 +157,7 @@ export const foundersGroteskMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "DLX Systems",
+  title: "dlxsystems",
   description: "Branding website for dlx-systems",
 };
 

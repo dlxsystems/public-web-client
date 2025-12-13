@@ -41,13 +41,13 @@ export default function Home() {
   const pad = (n: number) => String(n).padStart(2, "0");
 
   return (
-    <div className="flex min-h-screen flex-col justify-between bg-zinc-50 dark:bg-black px-4">
+    <div className="flex min-h-screen flex-col justify-between px-4">
       <main className="mx-auto w-full max-w-xl text-center pt-24">
-        <h1 className="mb-4 text-2xl font-semibold text-black dark:text-zinc-50">
+        <h1 className="mb-4 text-2xl font-semibold text-black">
           Under Development
         </h1>
 
-        <p className="mb-6 text-sm text-zinc-600 dark:text-zinc-400">
+        <p className="mb-6 text-sm text-zinc-600">
           We are currently developing the website. We will go live soon.
         </p>
 
@@ -57,40 +57,32 @@ export default function Home() {
           aria-live="polite"
           className="mx-auto mb-10 flex items-stretch gap-3 justify-center"
         >
-          <div className="flex w-20 flex-col items-center rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm dark:border-zinc-800 dark:bg-zinc-900">
-            <div className="text-lg font-semibold text-black dark:text-zinc-50">
+          <div className="flex w-20 flex-col items-center rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm">
+            <div className="text-lg font-semibold text-black">
               {String(timeLeft.days)}
             </div>
-            <div className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-              Days
-            </div>
+            <div className="mt-1 text-xs text-zinc-500">Days</div>
           </div>
 
-          <div className="flex w-16 flex-col items-center rounded-md border border-zinc-200 bg-white px-2 py-2 text-sm dark:border-zinc-800 dark:bg-zinc-900">
-            <div className="text-lg font-semibold text-black dark:text-zinc-50">
+          <div className="flex w-16 flex-col items-center rounded-md border border-zinc-200 bg-white px-2 py-2 text-sm">
+            <div className="text-lg font-semibold text-black">
               {pad(timeLeft.hours)}
             </div>
-            <div className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-              Hours
-            </div>
+            <div className="mt-1 text-xs text-zinc-500">Hours</div>
           </div>
 
-          <div className="flex w-16 flex-col items-center rounded-md border border-zinc-200 bg-white px-2 py-2 text-sm dark:border-zinc-800 dark:bg-zinc-900">
-            <div className="text-lg font-semibold text-black dark:text-zinc-50">
+          <div className="flex w-16 flex-col items-center rounded-md border border-zinc-200 bg-white px-2 py-2 text-sm">
+            <div className="text-lg font-semibold text-black">
               {pad(timeLeft.minutes)}
             </div>
-            <div className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-              Min
-            </div>
+            <div className="mt-1 text-xs text-zinc-500">Min</div>
           </div>
 
-          <div className="flex w-16 flex-col items-center rounded-md border border-zinc-200 bg-white px-2 py-2 text-sm dark:border-zinc-800 dark:bg-zinc-900">
-            <div className="text-lg font-semibold text-black dark:text-zinc-50">
+          <div className="flex w-16 flex-col items-center rounded-md border border-zinc-200 bg-white px-2 py-2 text-sm">
+            <div className="text-lg font-semibold text-black">
               {pad(timeLeft.seconds)}
             </div>
-            <div className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-              Sec
-            </div>
+            <div className="mt-1 text-xs text-zinc-500">Sec</div>
           </div>
         </div>
       </main>
@@ -105,7 +97,7 @@ export default function Home() {
           className="mb-4"
         />
 
-        <p className="text-xs text-zinc-500 dark:text-zinc-400">
+        <p className="text-xs text-zinc-500">
           © {new Date().getFullYear()} dlx systems. All rights reserved.
         </p>
       </footer>
