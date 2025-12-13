@@ -4,21 +4,9 @@
   --foreground: #171717;
   --bg-gradient-start: #e6e9f0;
   --bg-gradient-end: #eef1f5;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-founders);
   --font-text: var(--font-founders-text);
   --font-mono: var(--font-founders-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
@@ -28,4 +16,5 @@ body {
     var(--bg-gradient-end) 100%
   );
   color: var(--foreground);
+  font-family: var(--font-sans);
 }

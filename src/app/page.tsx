@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Logo from "../../public/assets/images/logo.png";
+import Logo from "@/assets/images/logo.png";
 
 function getNext21Midnight(): Date {
   const now = new Date();
@@ -43,11 +43,11 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col justify-between px-4">
       <main className="mx-auto w-full max-w-xl text-center pt-24">
-        <h1 className="mb-4 text-2xl font-semibold text-black">
+        <h1 className="mb-4 text-3xl font-semibold text-black">
           Under Development
         </h1>
 
-        <p className="mb-6 text-sm text-zinc-600">
+        <p className="mb-6 text-md text-zinc-600">
           We are currently developing the website. We will go live soon.
         </p>
 
@@ -58,28 +58,28 @@ export default function Home() {
           className="mx-auto mb-10 flex items-stretch gap-3 justify-center"
         >
           <div className="flex w-20 flex-col items-center rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm">
-            <div className="text-lg font-semibold text-black">
+            <div className="text-xl font-semibold text-black">
               {String(timeLeft.days)}
             </div>
             <div className="mt-1 text-xs text-zinc-500">Days</div>
           </div>
 
           <div className="flex w-16 flex-col items-center rounded-md border border-zinc-200 bg-white px-2 py-2 text-sm">
-            <div className="text-lg font-semibold text-black">
+            <div className="text-xl font-semibold text-black">
               {pad(timeLeft.hours)}
             </div>
             <div className="mt-1 text-xs text-zinc-500">Hours</div>
           </div>
 
           <div className="flex w-16 flex-col items-center rounded-md border border-zinc-200 bg-white px-2 py-2 text-sm">
-            <div className="text-lg font-semibold text-black">
+            <div className="text-xl font-semibold text-black">
               {pad(timeLeft.minutes)}
             </div>
             <div className="mt-1 text-xs text-zinc-500">Min</div>
           </div>
 
           <div className="flex w-16 flex-col items-center rounded-md border border-zinc-200 bg-white px-2 py-2 text-sm">
-            <div className="text-lg font-semibold text-black">
+            <div className="text-xl font-semibold text-black">
               {pad(timeLeft.seconds)}
             </div>
             <div className="mt-1 text-xs text-zinc-500">Sec</div>
