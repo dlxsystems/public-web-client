@@ -5,56 +5,56 @@ import "./globals.css";
 export const foundersGrotesk = localFont({
   src: [
     {
-      path: "../../public/assets/fonts/FoundersGrotesk-Light.otf",
+      path: "../assets/fonts/FoundersGrotesk-Light.otf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../public/assets/fonts/FoundersGrotesk-LightItalic.otf",
+      path: "../assets/fonts/FoundersGrotesk-LightItalic.otf",
       weight: "300",
       style: "italic",
     },
 
     {
-      path: "../../public/assets/fonts/FoundersGrotesk-Regular.otf",
+      path: "../assets/fonts/FoundersGrotesk-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/assets/fonts/FoundersGrotesk-RegularItalic.otf",
+      path: "../assets/fonts/FoundersGrotesk-RegularItalic.otf",
       weight: "400",
       style: "italic",
     },
 
     {
-      path: "../../public/assets/fonts/FoundersGrotesk-Medium.otf",
+      path: "../assets/fonts/FoundersGrotesk-Medium.otf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../public/assets/fonts/FoundersGrotesk-MediumItalic.otf",
+      path: "../assets/fonts/FoundersGrotesk-MediumItalic.otf",
       weight: "500",
       style: "italic",
     },
 
     {
-      path: "../../public/assets/fonts/FoundersGrotesk-Semibold.otf",
+      path: "../assets/fonts/FoundersGrotesk-Semibold.otf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../../public/assets/fonts/FoundersGrotesk-SemiboldItalic.otf",
+      path: "../assets/fonts/FoundersGrotesk-SemiboldItalic.otf",
       weight: "600",
       style: "italic",
     },
 
     {
-      path: "../../public/assets/fonts/FoundersGrotesk-Bold.otf",
+      path: "../assets/fonts/FoundersGrotesk-Bold.otf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../../public/assets/fonts/FoundersGrotesk-BoldItalic.otf",
+      path: "../assets/fonts/FoundersGrotesk-BoldItalic.otf",
       weight: "700",
       style: "italic",
     },
@@ -66,56 +66,56 @@ export const foundersGrotesk = localFont({
 export const foundersGroteskText = localFont({
   src: [
     {
-      path: "../../public/assets/fonts/FoundersGroteskText-Light.otf",
+      path: "../assets/fonts/FoundersGroteskText-Light.otf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../public/assets/fonts/FoundersGroteskText-LightItalic.otf",
+      path: "../assets/fonts/FoundersGroteskText-LightItalic.otf",
       weight: "300",
       style: "italic",
     },
 
     {
-      path: "../../public/assets/fonts/FoundersGroteskText-Regular.otf",
+      path: "../assets/fonts/FoundersGroteskText-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/assets/fonts/FoundersGroteskText-RegularItalic.otf",
+      path: "../assets/fonts/FoundersGroteskText-RegularItalic.otf",
       weight: "400",
       style: "italic",
     },
 
     {
-      path: "../../public/assets/fonts/FoundersGroteskText-Medium.otf",
+      path: "../assets/fonts/FoundersGroteskText-Medium.otf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../public/assets/fonts/FoundersGroteskText-MediumItalic.otf",
+      path: "../assets/fonts/FoundersGroteskText-MediumItalic.otf",
       weight: "500",
       style: "italic",
     },
 
     {
-      path: "../../public/assets/fonts/FoundersGroteskText-Semibold.otf",
+      path: "../assets/fonts/FoundersGroteskText-Semibold.otf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../../public/assets/fonts/FoundersGroteskText-SemiboldItalic.otf",
+      path: "../assets/fonts/FoundersGroteskText-SemiboldItalic.otf",
       weight: "600",
       style: "italic",
     },
 
     {
-      path: "../../public/assets/fonts/FoundersGroteskText-Bold-.otf",
+      path: "../assets/fonts/FoundersGroteskText-Bold-.otf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../../public/assets/fonts/FoundersGroteskText-BoldItalic.otf",
+      path: "../assets/fonts/FoundersGroteskText-BoldItalic.otf",
       weight: "700",
       style: "italic",
     },
@@ -127,27 +127,27 @@ export const foundersGroteskText = localFont({
 export const foundersGroteskMono = localFont({
   src: [
     {
-      path: "../../public/assets/fonts/FoundersGroteskMono-Light.otf",
+      path: "../assets/fonts/FoundersGroteskMono-Light.otf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../public/assets/fonts/FoundersGroteskMono-Regular.otf",
+      path: "../assets/fonts/FoundersGroteskMono-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/assets/fonts/FoundersGroteskMono-Medium.otf",
+      path: "../assets/fonts/FoundersGroteskMono-Medium.otf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../public/assets/fonts/FoundersGroteskMono-Semibold.otf",
+      path: "../assets/fonts/FoundersGroteskMono-Semibold.otf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../../public/assets/fonts/FoundersGroteskMono-Bold.otf",
+      path: "../assets/fonts/FoundersGroteskMono-Bold.otf",
       weight: "700",
       style: "normal",
     },
@@ -157,7 +157,7 @@ export const foundersGroteskMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "DLX Systems",
+  title: "dlxsystems",
   description: "Branding website for dlx-systems",
 };
 
@@ -167,14 +167,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`${foundersGrotesk.variable} ${foundersGroteskText.variable} ${foundersGroteskMono.variable}
-    antialiased
-  `}
-      >
-        {children}
-      </body>
+    <html
+      lang="en"
+      className={`${foundersGrotesk.variable} ${foundersGroteskText.variable} ${foundersGroteskMono.variable}`}
+    >
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
