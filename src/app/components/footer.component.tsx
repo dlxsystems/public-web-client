@@ -16,6 +16,7 @@ export function Footer() {
                 alt="dlx systems"
                 fill
                 className="object-contain"
+                sizes="100px"
                 unoptimized
               />
             </Link>

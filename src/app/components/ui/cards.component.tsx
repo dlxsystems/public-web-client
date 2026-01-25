@@ -124,7 +124,7 @@ export function WorkCard({ study }: { study: CaseStudyItem }) {
             {study.year}
           </span>
         </div>
-        <h3 className="text-3xl md:text-5xl font-medium tracking-tight text-white leading-[1.05] mb-3 md:mb-4 max-w-lg drop-shadow-lg">
+        <h3 className="text-3xl xl:text-5xl font-medium tracking-tight text-white leading-[1.05] mb-3 md:mb-4 max-w-lg drop-shadow-lg">
           {study.title}
         </h3>
         <p className="text-base md:text-lg text-white/80 font-medium leading-relaxed max-w-sm line-clamp-2 opacity-100 md:opacity-0 md:transform md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] drop-shadow-md">
@@ -139,6 +139,7 @@ export function WorkCard({ study }: { study: CaseStudyItem }) {
           alt={study.title}
           fill
           unoptimized
+          sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105 blur-[1px] opacity-80 group-hover:opacity-60"
         />
         {/* Stronger Cinematic Gradient for legibility */}
@@ -171,7 +172,8 @@ export function TeamCard({ member }: { member: TeamMemberItem }) {
           alt={member.name}
           fill
           unoptimized
-          className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105 opacity-100"
+          sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover rounded-[48px] transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105 opacity-100"
         />
       </div>
 
@@ -180,7 +182,7 @@ export function TeamCard({ member }: { member: TeamMemberItem }) {
 
       {/* Content Layer */}
       <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end">
-        <div className="transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-2">
+        <div className="transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] md:group-hover:-translate-y-2">
           <h3 className="text-3xl font-semibold text-white tracking-tight mb-1 drop-shadow-md">
             {member.name}
           </h3>
@@ -188,9 +190,9 @@ export function TeamCard({ member }: { member: TeamMemberItem }) {
             {member.role}
           </p>
 
-          <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]">
+          <div className="grid grid-rows-[1fr] md:grid-rows-[0fr] md:group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]">
             <div className="overflow-hidden">
-              <p className="text-white/80 leading-relaxed text-sm max-w-xs pb-2 line-clamp-3 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 drop-shadow-sm">
+              <p className="text-white/80 leading-relaxed text-sm max-w-xs pb-2 line-clamp-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 delay-100 drop-shadow-sm">
                 {member.bio}
               </p>
             </div>
@@ -198,7 +200,7 @@ export function TeamCard({ member }: { member: TeamMemberItem }) {
         </div>
 
         {/* Socials Glass Pill */}
-        <div className="absolute top-10 right-8 flex flex-col gap-3 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] delay-100">
+        <div className="md:absolute top-10 right-8 flex md:flex-col gap-3 translate-x-0 opacity-100 md:translate-x-12 md:opacity-0 md:group-hover:translate-x-0 md:group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] delay-100">
           {member.socials.linkedin && (
             <a
               href={member.socials.linkedin}
@@ -241,6 +243,7 @@ export function InsightCard({ post }: { post: BlogPostItem }) {
           alt={post.title}
           fill
           unoptimized
+          sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105 opacity-70 group-hover:opacity-60"
         />
         {/* Stronger Bottom Gradient */}
@@ -264,9 +267,9 @@ export function InsightCard({ post }: { post: BlogPostItem }) {
             {post.title}
           </h3>
 
-          <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] mb-0 group-hover:mb-6">
+          <div className="grid grid-rows-[1fr] md:grid-rows-[0fr] md:group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] mb-0 group-hover:mb-6">
             <div className="overflow-hidden">
-              <p className="text-white/80 text-sm leading-relaxed line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 drop-shadow-sm">
+              <p className="text-white/80 text-sm leading-relaxed line-clamp-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 delay-100 drop-shadow-sm">
                 {post.description}
               </p>
             </div>
@@ -335,6 +338,7 @@ export function CustomerStoryCard({ story }: { story: CustomerStoryItem }) {
                   alt={story.author}
                   fill
                   unoptimized
+                  sizes="80px"
                   className="object-cover"
                 />
               </div>

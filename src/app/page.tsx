@@ -27,6 +27,7 @@ import {
   TeamMemberItem,
   BlogPostItem,
 } from "./components/ui/cards.component";
+import Link from "next/link";
 
 function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
   const ref = useRef<HTMLParagraphElement>(null);
@@ -74,7 +75,7 @@ export default function Home() {
         >
           <motion.div
             style={{ y: frameY, borderRadius: frameRadius }}
-            className="relative w-full h-full overflow-hidden"
+            className="relative h-full overflow-hidden"
           >
             <video
               src="/assets/videos/home-intro2.mp4"
@@ -89,7 +90,7 @@ export default function Home() {
 
             <motion.div
               style={{ y: textExitY }}
-              className="absolute bottom-12 left-6 right-6 md:bottom-24 md:left-24 md:right-auto max-w-xl text-white"
+              className="absolute bottom-32 left-6 right-6 md:bottom-24 md:left-24 md:right-auto max-w-xl text-white"
             >
               <h1 className="text-5xl md:text-8xl font-semibold mb-6">
                 We build systems that scale ideas.
@@ -101,9 +102,12 @@ export default function Home() {
                 confidence.
               </p>
 
-              <button className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-medium text-white hover:bg-white/10 transition cursor-pointer">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-medium text-white hover:bg-white/10 transition cursor-pointer"
+              >
                 Learn more
-              </button>
+              </Link>
             </motion.div>
 
             <motion.div
@@ -192,7 +196,7 @@ export default function Home() {
               <SectionTitle>Recent Work</SectionTitle>
             </SectionHeader>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
               {caseStudies.map((study) => (
                 <WorkCard
                   key={study.id}
@@ -238,7 +242,7 @@ export default function Home() {
               </div>
             </header>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
               {(blogPosts as unknown as BlogPostItem[]).map((post) => (
                 <InsightCard key={post.id} post={post} />
               ))}

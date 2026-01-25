@@ -62,6 +62,7 @@ export default async function WorkDetail({ params }: Props) {
             src={study.imagePost}
             alt={study.title}
             fill
+            sizes="100vw"
             unoptimized
             className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
           />

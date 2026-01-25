@@ -66,6 +66,7 @@ export default async function InsightDetail({ params }: Props) {
                     src={post.authorImg}
                     alt={post.author}
                     fill
+                    sizes="40px"
                     unoptimized
                     className="object-cover"
                   />
@@ -96,6 +97,7 @@ export default async function InsightDetail({ params }: Props) {
             src={post.image}
             alt={post.title}
             fill
+            sizes="(max-width: 1024px) 100vw, 1024px"
             unoptimized
             className="object-cover"
             priority
@@ -132,6 +134,7 @@ export default async function InsightDetail({ params }: Props) {
                 src={post.authorImg}
                 alt={post.author}
                 fill
+                sizes="80px"
                 unoptimized
                 className="object-cover"
               />

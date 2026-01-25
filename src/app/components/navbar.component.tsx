@@ -48,6 +48,8 @@ export function Navbar() {
             alt="dlx systems"
             fill
             className="object-contain transition-all duration-500"
+            sizes="150px"
+            priority
             unoptimized
           />
         </Link>
@@ -99,7 +101,8 @@ export function Navbar() {
                   src="/assets/images/logo-full.png"
                   alt="dlx systems"
                   fill
-                  className="object-contain invert"
+                  className="object-contain"
+                  sizes="150px"
                 />
               </div>
               <button
