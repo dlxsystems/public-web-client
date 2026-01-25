@@ -140,7 +140,7 @@ export function WorkCard({ study }: { study: CaseStudyItem }) {
           fill
           unoptimized
           sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105 blur-[1px] opacity-80 group-hover:opacity-60"
+          className="object-cover rounded-[32px] md:rounded-[48px] transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105 blur-[1px] opacity-80 group-hover:opacity-60"
         />
         {/* Stronger Cinematic Gradient for legibility */}
         <div className="absolute inset-0 bg-linear-to-b from-black/90 via-black/20 to-black/60 pointer-events-none" />

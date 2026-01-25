@@ -27,7 +27,7 @@ export function Footer() {
           </div>
 
           {/* Right Column: Links */}
-          <div className="flex gap-16 md:gap-24">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:flex md:gap-24">
             <div className="flex flex-col gap-4">
               <h4 className="font-mono text-xs uppercase tracking-widest text-black/40">
                 Company
@@ -88,12 +88,12 @@ export function Footer() {
               </a>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 col-span-2 md:col-span-1">
               <h4 className="font-mono text-xs uppercase tracking-widest text-black/40">
                 Office
               </h4>
               <p className="text-sm text-black/80">
-                Colombo,
+                Ratnapura,
                 <br />
                 Sri Lanka
               </p>

@@ -168,7 +168,7 @@ export default function PrivacyPolicy() {
             <br />
             <strong>Email:</strong> legal@dlxsystems.com
             <br />
-            <strong>Address:</strong> Colombo, Sri Lanka
+            <strong>Address:</strong> Ratnapura, Sri Lanka
           </p>
         </article>
       </div>
