@@ -1,106 +1,251 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Logo from "@/assets/images/logo.png";
+import { useRef, useEffect } from "react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  useInView,
+} from "framer-motion";
 
-function getNext21Midnight(): Date {
-  const now = new Date();
-  const candidate = new Date(now.getFullYear(), now.getMonth(), 21, 0, 0, 0, 0);
-  if (now >= candidate) {
-    return new Date(now.getFullYear(), now.getMonth() + 1, 21, 0, 0, 0, 0);
-  }
-  return candidate;
-}
+import { caseStudies, services, blogPosts, team, stats } from "./config/data";
+import { Story } from "./components/story.component";
 
-function calcTimeLeft(target: Date) {
-  const now = Date.now();
-  const diff = target.getTime() - now;
+import {
+  SectionBadge,
+  SectionTitle,
+  SectionHeader,
+} from "./components/ui/section.component";
+import {
+  ServiceCard,
+  WorkCard,
+  TeamCard,
+  InsightCard,
+  ServiceItem,
+  CaseStudyItem,
+  TeamMemberItem,
+  BlogPostItem,
+} from "./components/ui/cards.component";
 
-  if (diff <= 0)
-    return { days: 0, hours: 0, minutes: 0, seconds: 0, done: true };
+function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
+  const ref = useRef<HTMLParagraphElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const springValue = useSpring(0, { stiffness: 50, damping: 20, mass: 1 });
+  const displayValue = useTransform(springValue, (current) =>
+    Math.floor(current).toLocaleString()
+  );
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
+  useEffect(() => {
+    if (isInView) {
+      springValue.set(value);
+    }
+  }, [isInView, value, springValue]);
 
-  return { days, hours, minutes, seconds, done: false };
+  return (
+    <p
+      ref={ref}
+      className="text-6xl md:text-8xl font-semibold tracking-tighter mb-4 bg-clip-text text-transparent bg-linear-to-b from-black to-black/50"
+    >
+      <motion.span>{displayValue}</motion.span>
+      {suffix}
+    </p>
+  );
 }
 
 export default function Home() {
-  const [target] = useState(() => getNext21Midnight());
-  const [timeLeft, setTimeLeft] = useState(() => calcTimeLeft(target));
+  const { scrollY } = useScroll();
 
-  useEffect(() => {
-    setTimeLeft(calcTimeLeft(target));
-    const id = setInterval(() => setTimeLeft(calcTimeLeft(target)), 1000);
-    return () => clearInterval(id);
-  }, [target]);
+  const framePadding = useTransform(scrollY, [0, 300], ["12px", "36px"]);
+  const frameY = useTransform(scrollY, [0, -100], ["0px", "-24px"]);
+  const frameRadius = useTransform(scrollY, [0, 350], ["8px", "20px"]);
 
-  const pad = (n: number) => String(n).padStart(2, "0");
+  const textExitY = useTransform(scrollY, [200, 420], [0, 120]);
+  const textMaskOpacity = useTransform(scrollY, [200, 420], [0, 1]);
+  const indicatorOpacity = useTransform(scrollY, [0, 120], [1, 0]);
+  const videoOpacity = useTransform(scrollY, [0, 800], [1, 0]);
 
   return (
-    <div className="flex min-h-screen flex-col justify-between px-4">
-      <main className="mx-auto w-full max-w-xl text-center pt-24">
-        <h1 className="mb-4 text-3xl font-semibold text-black">
-          Under Development
-        </h1>
-
-        <p className="mb-6 text-md text-zinc-600">
-          We are currently developing the website. We will go live soon.
-        </p>
-
-        {/* Countdown */}
-        <div
-          role="timer"
-          aria-live="polite"
-          className="mx-auto mb-10 flex items-stretch gap-3 justify-center"
+    <div className="relative">
+      <section className="relative">
+        <motion.div
+          style={{ padding: framePadding, opacity: videoOpacity }}
+          className="fixed inset-0 z-0 pointer-events-none"
         >
-          <div className="flex w-20 flex-col items-center rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm">
-            <div className="text-xl font-semibold text-black">
-              {String(timeLeft.days)}
-            </div>
-            <div className="mt-1 text-xs text-zinc-500">Days</div>
-          </div>
+          <motion.div
+            style={{ y: frameY, borderRadius: frameRadius }}
+            className="relative w-full h-full overflow-hidden"
+          >
+            <video
+              src="/assets/videos/home-intro2.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            />
 
-          <div className="flex w-16 flex-col items-center rounded-md border border-zinc-200 bg-white px-2 py-2 text-sm">
-            <div className="text-xl font-semibold text-black">
-              {pad(timeLeft.hours)}
-            </div>
-            <div className="mt-1 text-xs text-zinc-500">Hours</div>
-          </div>
+            <div className="absolute inset-0 bg-black/65" />
 
-          <div className="flex w-16 flex-col items-center rounded-md border border-zinc-200 bg-white px-2 py-2 text-sm">
-            <div className="text-xl font-semibold text-black">
-              {pad(timeLeft.minutes)}
-            </div>
-            <div className="mt-1 text-xs text-zinc-500">Min</div>
-          </div>
+            <motion.div
+              style={{ y: textExitY }}
+              className="absolute bottom-12 left-6 right-6 md:bottom-24 md:left-24 md:right-auto max-w-xl text-white"
+            >
+              <h1 className="text-5xl md:text-8xl font-semibold mb-6">
+                We build systems that scale ideas.
+              </h1>
 
-          <div className="flex w-16 flex-col items-center rounded-md border border-zinc-200 bg-white px-2 py-2 text-sm">
-            <div className="text-xl font-semibold text-black">
-              {pad(timeLeft.seconds)}
+              <p className="text-lg text-white/80 leading-relaxed mb-6">
+                Clean architecture, thoughtful engineering, and long-term
+                impact. We help teams design and deliver systems that grow with
+                confidence.
+              </p>
+
+              <button className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-medium text-white hover:bg-white/10 transition cursor-pointer">
+                Learn more
+              </button>
+            </motion.div>
+
+            <motion.div
+              style={{ opacity: textMaskOpacity }}
+              className="
+                absolute inset-x-0 bottom-20 h-[120vh]
+                bg-linear-to-b from-transparent to-transparent
+                pointer-events-none
+              "
+            />
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          style={{ opacity: indicatorOpacity }}
+          className="fixed bottom-10 left-1/2 z-20 -translate-x-1/2 text-white/70"
+        >
+          <div className="flex flex-col items-center gap-2 text-xs tracking-widest">
+            <span>SCROLL</span>
+            <div className="h-6 w-px bg-white/50" />
+          </div>
+        </motion.div>
+
+        <div className="relative z-10 h-screen" />
+
+        {/* STATS SECTION */}
+        <div className="relative z-30 bg-transparent py-20 md:py-40">
+          <div className="mx-auto px-6 md:px-12 max-w-7xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16 text-center">
+              {stats.map((stat, index) => (
+                <div key={index}>
+                  <Counter value={stat.value} suffix={stat.suffix} />
+                  <p className="text-sm md:text-base font-medium text-black/60 leading-relaxed max-w-[200px] mx-auto">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
             </div>
-            <div className="mt-1 text-xs text-zinc-500">Sec</div>
           </div>
         </div>
-      </main>
 
-      {/* Footer */}
-      <footer className="w-full py-8 flex flex-col items-center text-center">
-        <Image
-          src={Logo} // update with your actual logo path
-          width={80}
-          height={80}
-          alt="Company Logo"
-          className="mb-4"
-        />
+        {/* FIRST CONTENT SECTION — WHAT WE BUILD */}
+        {/* FIRST CONTENT SECTION — WHAT WE BUILD */}
+        <div
+          id="expertise"
+          className="relative z-30 bg-transparent py-16 md:py-32 rounded-t-3xl"
+        >
+          <div className="mx-auto px-10 md:px-32 text-black">
+            <SectionHeader>
+              <SectionBadge>OUR EXPERTISE</SectionBadge>
+              <SectionTitle className="mb-8">What we offer</SectionTitle>
+            </SectionHeader>
 
-        <p className="text-xs text-zinc-500">
-          © {new Date().getFullYear()} dlx systems. All rights reserved.
-        </p>
-      </footer>
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {services.map((service) => (
+                  <ServiceCard
+                    key={service.id}
+                    service={service as ServiceItem}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CUSTOMER STORIES — CAROUSEL */}
+        <div className="relative z-30 bg-transparent py-16 md:py-32">
+          <div className="mx-auto px-10 md:px-32 text-black">
+            <SectionHeader className="mb-10">
+              <SectionBadge>CLIENT STORIES</SectionBadge>
+              <SectionTitle className="text-4xl md:text-7xl">
+                What our clients' say
+              </SectionTitle>
+            </SectionHeader>
+
+            <Story />
+          </div>
+        </div>
+
+        {/* CASE STUDIES */}
+        <div id="work" className="relative z-30 bg-transparent py-16 md:py-32">
+          <div className="mx-auto px-10 md:px-32 text-black">
+            <SectionHeader>
+              <SectionBadge>CASE STUDIES</SectionBadge>
+              <SectionTitle>Recent Work</SectionTitle>
+            </SectionHeader>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {caseStudies.map((study) => (
+                <WorkCard
+                  key={study.id}
+                  study={study as unknown as CaseStudyItem}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* TEAM SECTION */}
+        <div
+          id="team"
+          className="relative z-30 bg-transparent py-16 md:py-32 border-t border-black/5"
+        >
+          <div className="px-10 md:px-32 text-black max-w-7xl mx-auto">
+            <SectionHeader className="mx-auto text-center flex flex-col items-center">
+              <SectionBadge>TEAM</SectionBadge>
+              <SectionTitle>Leadership</SectionTitle>
+            </SectionHeader>
+
+            <div className="flex flex-wrap justify-center gap-12 md:gap-20">
+              {team.map((member) => (
+                <TeamCard
+                  key={member.name}
+                  member={member as unknown as TeamMemberItem}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* INSIGHTS / BLOG */}
+        <div
+          id="insights"
+          className="relative z-30 bg-transparent py-16 md:py-32 border-t border-black/5"
+        >
+          <div className="mx-auto px-10 md:px-32 text-black">
+            <header className="mb-24 flex flex-col items-start gap-6 md:flex-row md:justify-between md:items-end">
+              <div className="max-w-4xl">
+                <SectionBadge className="px-3">Insights</SectionBadge>
+                <SectionTitle>How we think</SectionTitle>
+              </div>
+            </header>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {(blogPosts as unknown as BlogPostItem[]).map((post) => (
+                <InsightCard key={post.id} post={post} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

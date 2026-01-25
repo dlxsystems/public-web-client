@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --foreground: #171717;
@@ -7,6 +8,17 @@
   --font-sans: var(--font-founders);
   --font-text: var(--font-founders-text);
   --font-mono: var(--font-founders-mono);
+  --primary: #136fa3;
+  --secondary: #4f575b;
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+}
+
+html {
+  overscroll-behavior: none;
 }
 
 body {
@@ -17,4 +29,26 @@ body {
   );
   color: var(--foreground);
   font-family: var(--font-sans);
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: auto;
+}
+
+::-webkit-scrollbar {
+  /* display: none; */
+}
+
+/* Kill default slick UI noise */
+.slick-dots,
+.slick-arrow {
+  display: none !important;
+}
+
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  height: auto;
+  will-change: transform;
 }

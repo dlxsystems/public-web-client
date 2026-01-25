@@ -1,0 +1,336 @@
+{
+  "services": [
+    {
+      "id": "01",
+      "title": "System Architecture",
+      "description": "Clean structures that evolve and adapt without collapse.",
+      "icon": "IconBuildingBridge",
+      "bg": "bg-amber-500/40",
+      "text": "text-amber-900"
+    },
+    {
+      "id": "02",
+      "title": "Design & Intelligence",
+      "description": "Thoughtful interfaces and data-driven decisions.",
+      "icon": "IconFilters",
+      "bg": "bg-violet-500/40",
+      "text": "text-violet-900"
+    },
+    {
+      "id": "03",
+      "title": "Product Engineering",
+      "description": "End-to-end systems engineered for longevity, performance, and clarity.",
+      "icon": "IconAssembly",
+      "bg": "bg-sky-500/40",
+      "text": "text-sky-900"
+    },
+    {
+      "id": "04",
+      "title": "Cloud & Infrastructure",
+      "description": "Scalable, secure infrastructure designed for real-world production.",
+      "icon": "IconCloudCog",
+      "bg": "bg-lime-500/40",
+      "text": "text-lime-900"
+    },
+    {
+      "id": "05",
+      "title": "Data Platforms",
+      "description": "Reliable data pipelines and platforms that support insight and growth.",
+      "icon": "IconDatabase",
+      "bg": "bg-rose-500/40",
+      "text": "text-rose-900"
+    },
+    {
+      "id": "06",
+      "title": "Platform Modernization",
+      "description": "Refactoring and re-architecture of existing systems without disruption.",
+      "icon": "IconRefreshDot",
+      "bg": "bg-emerald-500/40",
+      "text": "text-emerald-900"
+    }
+  ],
+  "customerStories": [
+    {
+      "id": "01",
+      "quote": "Chamod is extremely professional and knows exactly what he is doing. As someone with limited technical knowledge, I often had ideas without knowing if they were possible. Every time, he responded calmly and confidently. Yes, we can do that. No problem. Working with him never feels like you are carrying the project alone. He treats the work as if it were his own, stays focused, open-minded, and fully committed. With Chamod, you don’t need to guide step by step. He simply gets it. I genuinely believe he is a jackpot for any company or project.",
+      "author": "Ferhat Zengin",
+      "company": "Wixit NL",
+      "image": "/assets/images/profile-avatar.jpg"
+    },
+    {
+      "id": "02",
+      "quote": "The website feels calm, clear, and aligned with how I work with clients. Chamod understood the importance of trust and simplicity, and translated that into a system that is easy for me to maintain and comfortable for clients to use.",
+      "author": "Ashley Franklin",
+      "company": "Ashley Franklin Wellness (US)",
+      "image": "/assets/images/profile-avatar.jpg"
+    },
+    {
+      "id": "03",
+      "quote": "Chamod didn’t just build a platform. He helped structure the idea itself. The system makes audio learning simple and usable without unnecessary complexity, which was exactly what we needed for students here.",
+      "author": "Founder",
+      "company": "AudioPapers.lk (Sri Lanka)",
+      "image": "/assets/images/profile-avatar.jpg"
+    }
+  ],
+  "caseStudies": [
+    {
+      "id": "01",
+      "title": "Ashley Franklin Wellness – digital platform for therapeutic services",
+      "description": "Designing and implementing a calm, trust-focused web platform for a US-based licensed wellness practitioner.",
+      "industry": "Health & Wellness",
+      "year": "2024",
+      "image": "/assets/images/work-1.jpg",
+      "imagePost": "/assets/images/work-1-c.png",
+      "slug": "ashley-franklin-wellness",
+      "role": "Full Stack Developer",
+      "team": "Solo",
+      "duration": "3 Months",
+      "content": "<h2>Client Context</h2><p><a href=\"https://www.ashleyfranklinwellness.com\" target=\"_blank\" rel=\"noopener noreferrer\">Ashley Franklin Wellness</a> is a US-based mental health and wellness practice led by Ashley Franklin, a licensed clinician working primarily with women. The website acts as the primary point of trust for new clients seeking therapeutic support.</p><h2>The Core Problem</h2><p>Mental health platforms operate in a high-trust environment. Visitors often arrive during moments of stress or uncertainty. The existing digital presence needed clearer structure, calmer visual hierarchy, and content that could be understood quickly without feeling overwhelming.</p><p>From a system perspective, the challenge was to balance emotional sensitivity with technical clarity. Over-engineering would harm usability. Under-structuring would create long-term maintenance risk.</p><h2>Design & System Approach</h2><p>The platform was built with a content-first architecture. Navigation, typography, and spacing were treated as functional elements, not decoration. The system deliberately limits complexity to preserve clarity over time.</p><ul><li><strong>Clear Information Flow:</strong> Services, philosophy, and contact paths clearly separated.</li><li><strong>Accessibility Focus:</strong> Readable layouts optimized for mobile and low-cognitive-load browsing.</li><li><strong>Maintainable Structure:</strong> Simple page and component hierarchy to allow safe updates.</li></ul><h2>Outcome</h2><p>The resulting platform communicates professionalism and safety without distraction. Visitors can quickly understand services and reach out with confidence. From a technical standpoint, the system remains stable, lightweight, and easy to evolve without redesign.</p>"
+    },
+    {
+      "id": "02",
+      "title": "AudioPapers.lk – audio-based learning platform for exam preparation",
+      "description": "Building an audio-first education platform for structured exam preparation in Sri Lanka.",
+      "industry": "Education / EdTech",
+      "year": "2023",
+      "image": "/assets/images/work-2.jpg",
+      "imagePost": "/assets/images/work-2-c.png",
+      "slug": "audiopapers-platform",
+      "role": "Founder & Full Stack Engineer",
+      "team": "Solo",
+      "duration": "4 Months",
+      "content": "<h2>Client Context</h2><p><a href=\"https://audiopapers.lk\" target=\"_blank\" rel=\"noopener noreferrer\">AudioPapers.lk</a> is a Sri Lanka–based educational platform focused on delivering Multiple Choice Questions (MCQs) with accompanying audio explanations. Content is aimed at students preparing for competitive and academic exams.</p><h2>The Core Problem</h2><p>Most exam-preparation platforms are heavily text-based and visually dense. Audio content, when layered on top of traditional systems, often feels secondary and poorly integrated. The challenge was to treat audio as a first-class learning medium rather than an accessory.</p><p>From a systems perspective, audio introduces different constraints. Navigation, pacing, and content structure must support listening without forcing constant visual interaction.</p><h2>Platform Architecture & Design</h2><p>The platform was designed around clear separation of concerns. Content organization, audio delivery, and presentation were kept independent to allow future growth without architectural churn.</p><ul><li><strong>Audio-First Content Model:</strong> Each MCQ paired directly with its audio explanation.</li><li><strong>Structured Discovery:</strong> Subjects and topics organized for predictable navigation.</li><li><strong>Performance Discipline:</strong> Lightweight pages optimized for consistent audio playback.</li></ul><h2>Outcome</h2><p>AudioPapers.lk launched as a focused, usable foundation rather than an overbuilt product. The system supports incremental content expansion while keeping the learning experience simple, accessible, and reliable.</p>"
+    },
+    {
+      "id": "03",
+      "title": "Wixit – evolving a freelance marketplace into a healthcare platform",
+      "description": "Designing and evolving a Netherlands-based freelance marketplace with a later focus on healthcare services.",
+      "industry": "Healthcare / Marketplace",
+      "year": "2023",
+      "image": "/assets/images/work-3.png",
+      "imagePost": "/assets/images/work-3-c.png",
+      "slug": "wixit-platform",
+      "role": "Full Stack Engineer",
+      "team": "Solo",
+      "duration": "7 Months",
+      "content": "<h2>Client Context</h2><p>Wixit originated as a Netherlands-based freelance services platform, conceptually similar to Fiverr, intended to connect professionals with clients seeking on-demand services. Over time, the platform direction shifted toward a healthcare-focused services marketplace.</p><h2>The Core Problem</h2><p>Generic freelance platforms optimize for volume and speed. Healthcare services require trust, clarity, and well-defined boundaries. The existing marketplace model needed rethinking to support healthcare expectations without discarding the original platform foundation.</p><p>The challenge was not purely technical. It required redefining how services were described, discovered, and requested while preserving system coherence.</p><h2>System Evolution Strategy</h2><p>Rather than rebuilding from scratch, the platform was adapted incrementally. Core marketplace concepts were retained, while workflows were tightened to suit healthcare use cases.</p><ul><li><strong>Role Separation:</strong> Clear distinction between healthcare professionals and clients.</li><li><strong>Service-Centric Design:</strong> Structured listings with explicit scope and expectations.</li><li><strong>Incremental Architecture:</strong> Platform adapted without destabilizing existing logic.</li></ul><h2>Outcome</h2><p>Wixit established a clearer identity as a healthcare-oriented services platform. The system now supports future growth while maintaining control over complexity, trust, and service quality.</p>"
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": "1",
+      "title": "Systems fail quietly before they fail loudly",
+      "description": "Why most production failures are slow, invisible, and completely predictable in hindsight.",
+      "image": "/assets/images/blog-new-1.png",
+      "category": "Architecture",
+      "date": "2025-01-19",
+      "readingTime": "9 min read",
+      "author": "Chamod Nugekotuwa",
+      "authorImg": "/assets/images/chamod.jpg",
+      "designation": "CEO / Founder DLX",
+      "slug": "systems-fail-quietly",
+      "bg": "bg-slate-100",
+      "content": "<p class=\"lead\">Most systems do not collapse in a dramatic moment. They decay. They grow brittle. They accumulate assumptions that were once reasonable and slowly become dangerous.</p><h2>The Illusion of Stability</h2><p>When a system is working, we assume it is healthy. This is a mistake. A system can be functioning while quietly accumulating risk. Latency increases slightly. Error handling becomes inconsistent. Monitoring dashboards show green lights that nobody truly trusts.</p><p>Stability is not the absence of failure. Stability is the presence of margins. When those margins disappear, even small changes become catastrophic.</p><h2>Failure is a Process, Not an Event</h2><p>Production outages are often blamed on a single trigger. A deployment. A configuration change. A traffic spike. These are rarely the real cause.</p><p>The real failure happened months earlier. When coupling increased. When ownership became unclear. When shortcuts were taken without paying back the debt.</p><h3>Common Warning Signs</h3><ul><li><strong>Slow Decisions:</strong> Engineers hesitate because they no longer trust the system.</li><li><strong>Hidden Knowledge:</strong> Only one or two people understand critical paths.</li><li><strong>Fragile Deployments:</strong> Every release feels risky.</li><li><strong>Alert Fatigue:</strong> Too many signals, too little meaning.</li></ul><h2>Designing for Early Failure</h2><p>Healthy systems fail early and visibly. They surface problems when the cost of fixing them is still low. This requires intentional design.</p><p>Clear boundaries. Explicit contracts. Observability that explains behavior, not just metrics. When systems are honest about their state, engineers can act before damage spreads.</p><p>Loud failures are painful. Silent failures are fatal.</p>"
+    },
+    {
+      "id": "2",
+      "title": "Architecture is a series of irreversible decisions",
+      "description": "Why early architectural choices matter more than most teams are willing to admit.",
+      "image": "/assets/images/blog-new-2.png",
+      "category": "Engineering",
+      "date": "2025-01-03",
+      "readingTime": "11 min read",
+      "author": "Chamod Nugekotuwa",
+      "authorImg": "/assets/images/chamod.jpg",
+      "designation": "CEO / Founder DLX",
+      "slug": "architecture-irreversible-decisions",
+      "bg": "bg-slate-100",
+      "content": "<p class=\"lead\">Teams like to believe architecture is flexible. That everything can be changed later. In practice, this is only partially true.</p><h2>The Myth of Easy Refactoring</h2><p>Code can be refactored. Architecture rarely can. Once a system is deployed, integrated, and depended upon, its shape becomes difficult to change without disruption.</p><p>Data models harden. APIs become contracts. Operational workflows form around assumptions that are never written down.</p><h2>What Becomes Locked In</h2><p>Early decisions determine how teams think. Where logic lives. Who owns what. How failures are handled.</p><ul><li><strong>Data Ownership:</strong> Who controls the source of truth.</li><li><strong>Coupling Direction:</strong> Which components depend on which.</li><li><strong>Deployment Model:</strong> How often and how safely changes can ship.</li><li><strong>Operational Complexity:</strong> How much mental load is required to keep things running.</li></ul><h2>Constraints Are Not the Enemy</h2><p>Good architecture is not about infinite flexibility. It is about choosing the right constraints early.</p><p>Constraints reduce decision fatigue. They protect teams from accidental complexity. They guide engineers toward safe patterns by default.</p><h2>Design for the Team You Will Become</h2><p>Systems outlive people. The team that maintains your system in two years will not remember why certain decisions were made.</p><p>Architecture should make the correct behavior obvious and the dangerous behavior difficult. This is how systems scale without heroics.</p>"
+    },
+    {
+      "id": "3",
+      "title": "Modernization is about trust, not technology",
+      "description": "Why successful legacy transformations focus more on people than platforms.",
+      "image": "/assets/images/blog-new-3.png",
+      "category": "Modernization",
+      "date": "2024-12-27",
+      "readingTime": "12 min read",
+      "author": "Chamod Nugekotuwa",
+      "authorImg": "/assets/images/chamod.jpg",
+      "designation": "CEO / Founder DLX",
+      "slug": "modernization-is-trust",
+      "bg": "bg-slate-100",
+      "content": "<p class=\"lead\">Legacy systems are rarely replaced because of technology. They are replaced because trust erodes.</p><h2>What Legacy Really Means</h2><p>Legacy systems are systems that nobody feels safe changing. The code works, but understanding is gone. Every modification feels like defusing a bomb.</p><p>The problem is not age. The problem is fear.</p><h2>The Cost of Broken Trust</h2><p>When engineers do not trust the system, they avoid change. When product teams do not trust engineering, they stop planning long-term.</p><p>Velocity drops. Quality declines. The organization becomes reactive instead of intentional.</p><h2>Why Big Rewrites Fail</h2><p>Rewrites promise a clean slate. What they deliver is uncertainty.</p><p>Business stakeholders lose visibility. Engineers lose confidence. Parallel systems drift apart.</p><h3>A Safer Path</h3><ul><li><strong>Incremental Change:</strong> Small steps that prove value quickly.</li><li><strong>Parallel Validation:</strong> Old and new paths compared continuously.</li><li><strong>Clear Ownership:</strong> Every component has a responsible team.</li></ul><h2>Modernization as Relationship Repair</h2><p>Successful modernization rebuilds trust. Between code and engineers. Between engineering and the business.</p><p>When teams trust their systems again, technology choices become almost secondary. Progress resumes naturally.</p>"
+    }
+  ],
+  "team": [
+    {
+      "name": "Chamod Nugekotuwa",
+      "role": "CEO & Founder",
+      "image": "/assets/images/chamod.jpg",
+      "bio": "Obsessed with software architecture and systems that scale. Helping companies build engineering foundations that last.",
+      "socials": {
+        "linkedin": "https://www.linkedin.com/in/c-koder",
+        "mail": "ceo@dlxsystems.com"
+      }
+    }
+  ],
+  "openPositions": [
+    {
+      "id": "01",
+      "title": "Software Engineer Intern (1)",
+      "department": "Engineering",
+      "location": "Remote / Colombo",
+      "type": "Internship (6 Months)",
+      "description": "This internship is designed for students who want hands-on exposure to building real production-grade user interfaces. You will work on live systems used by actual clients, focusing on frontend engineering fundamentals, clean component design, and performance-aware development. The role emphasizes learning by doing, with close mentorship and gradual ownership of features.",
+      "responsibilities": [
+        "Develop and maintain frontend features using modern JavaScript frameworks.",
+        "Translate design specifications into responsive, accessible UI components.",
+        "Collaborate with backend engineers to integrate APIs into frontend flows.",
+        "Identify and fix UI bugs while improving usability and consistency.",
+        "Participate in code reviews to understand quality standards and best practices.",
+        "Document frontend components and implementation decisions."
+      ],
+      "requirements": [
+        "Currently pursuing a degree in Computer Science, Software Engineering, or a related field.",
+        "Basic knowledge of HTML, CSS, and JavaScript.",
+        "Familiarity with at least one frontend framework such as React or similar.",
+        "Understanding of basic software engineering concepts.",
+        "Strong willingness to learn and accept feedback."
+      ]
+    },
+    {
+      "id": "02",
+      "title": "Software Engineer Intern (2)",
+      "department": "Engineering",
+      "location": "Remote",
+      "type": "Internship (6 Months)",
+      "description": "This role focuses on backend engineering fundamentals and system thinking. Interns will learn how APIs, databases, and services work together in production systems. The goal is not only to write backend code, but to understand data flow, system boundaries, and reliability concerns within real applications.",
+      "responsibilities": [
+        "Assist in developing and maintaining backend services and APIs.",
+        "Implement basic business logic under guidance from senior engineers.",
+        "Work with databases to store, retrieve, and validate application data.",
+        "Write simple unit tests and understand their role in system stability.",
+        "Debug issues using logs and structured problem-solving approaches.",
+        "Document backend workflows and API behavior."
+      ],
+      "requirements": [
+        "Currently pursuing a degree in Computer Science, Software Engineering, or a related discipline.",
+        "Basic programming experience in any backend-oriented language.",
+        "Fundamental understanding of APIs and client–server architecture.",
+        "Basic familiarity with relational databases.",
+        "Interest in learning scalable system design concepts."
+      ]
+    },
+    {
+      "id": "03",
+      "title": "DevOps / Cloud Engineering Intern",
+      "department": "Infrastructure",
+      "location": "Remote",
+      "type": "Internship (6 Months)",
+      "description": "This internship provides exposure to how software systems are deployed, monitored, and maintained in production environments. You will learn cloud fundamentals, deployment pipelines, and operational best practices that keep systems reliable and secure.",
+      "responsibilities": [
+        "Assist with cloud environment setup and configuration on AWS or GCP.",
+        "Support container-based deployments using Docker.",
+        "Help maintain CI/CD pipelines and understand release workflows.",
+        "Monitor system logs and basic performance metrics.",
+        "Document infrastructure processes and deployment steps.",
+        "Learn security fundamentals such as access control and secrets management."
+      ],
+      "requirements": [
+        "Currently pursuing a degree in Computer Science, IT, Software Engineering, or a related field.",
+        "Basic understanding of how web applications are hosted.",
+        "Familiarity with Linux command-line basics.",
+        "Interest in cloud platforms and system reliability.",
+        "Strong sense of responsibility and attention to detail."
+      ]
+    },
+    {
+      "id": "04",
+      "title": "Product Management Intern",
+      "department": "Product",
+      "location": "Remote",
+      "type": "Internship (6 Months)",
+      "description": "This role is for interns interested in how products are shaped at the intersection of business, technology, and users. You will assist in defining requirements, documenting product decisions, and supporting communication between technical and non-technical stakeholders.",
+      "responsibilities": [
+        "Assist in gathering and documenting product requirements.",
+        "Support backlog grooming and feature prioritization activities.",
+        "Collaborate with engineers to clarify scope and acceptance criteria.",
+        "Help create simple product documentation and user stories.",
+        "Participate in product discussions and internal reviews."
+      ],
+      "requirements": [
+        "Currently pursuing a degree in Business, IT, Engineering, or a related field.",
+        "Strong communication and documentation skills.",
+        "Basic understanding of software development processes.",
+        "Ability to think from both user and business perspectives.",
+        "Interest in product strategy and decision-making."
+      ]
+    },
+    {
+      "id": "05",
+      "title": "Business Analyst Intern",
+      "department": "Business",
+      "location": "Remote",
+      "type": "Internship (6 Months)",
+      "description": "The Business Analyst internship focuses on understanding problems before solutions are built. You will help analyze business needs, translate them into clear requirements, and support data-driven decision-making within projects.",
+      "responsibilities": [
+        "Analyze business requirements and document functional needs.",
+        "Assist in creating process flows and requirement documents.",
+        "Work with technical teams to clarify assumptions and constraints.",
+        "Support validation of delivered features against requirements.",
+        "Help improve internal documentation and workflows."
+      ],
+      "requirements": [
+        "Currently pursuing a degree in Business Analysis, Information Systems, Management, or a related field.",
+        "Strong analytical and problem-solving skills.",
+        "Ability to document requirements clearly and concisely.",
+        "Basic understanding of software systems and workflows.",
+        "Comfortable working with both technical and non-technical teams."
+      ]
+    },
+    {
+      "id": "06",
+      "title": "Human Resources Intern",
+      "department": "People & Operations",
+      "location": "Remote / Colombo",
+      "type": "Internship (6 Months)",
+      "description": "This internship supports the people and operations side of DLX Systems. You will assist with recruitment coordination, intern management processes, and internal policy documentation, gaining practical exposure to HR operations in a growing tech organization.",
+      "responsibilities": [
+        "Assist in coordinating recruitment and internship processes.",
+        "Support onboarding and documentation for new interns.",
+        "Help maintain internal HR records and communication.",
+        "Assist in drafting basic HR policies and guidelines.",
+        "Support employee engagement and coordination activities."
+      ],
+      "requirements": [
+        "Currently pursuing a degree in Human Resource Management, Business Administration, or a related field.",
+        "Strong organizational and communication skills.",
+        "Ability to handle information responsibly and confidentially.",
+        "Basic familiarity with recruitment or HR concepts.",
+        "Interest in people operations within a technology environment."
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "value": 4,
+      "suffix": "+",
+      "label": "Years building production systems"
+    },
+    {
+      "value": 40,
+      "suffix": "+",
+      "label": "Products shipped to real users"
+    },
+    {
+      "value": 4,
+      "label": "Industries serving millions"
+    },
+    {
+      "value": 92,
+      "suffix": "%",
+      "label": "Clients retained long term"
+    }
+  ]
+}
