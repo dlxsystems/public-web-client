@@ -9,13 +9,22 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
+    "@tabler/icons-react": "^3.36.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/react-slick": "^0.23.13",
+    "framer-motion": "^12.23.26",
     "next": "16.0.8",
+    "nodemailer": "^7.0.12",
     "react": "19.2.1",
-    "react-dom": "19.2.1"
+    "react-dom": "19.2.1",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/nodemailer": "^7.0.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
