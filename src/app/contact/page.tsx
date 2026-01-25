@@ -97,9 +97,9 @@ export default function Contact() {
   const budgets = ["< $2k", "$2k - $5k", "$5k - $10k", "$10k+"];
 
   return (
-    <main className="relative min-h-screen pt-32 pb-20 px-6 md:px-0 overflow-hidden">
+    <main className="relative min-h-screen pt-32 pb-20 overflow-hidden">
       <div className="mx-auto px-6 md:px-32 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 md:pt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 md:pt-12">
           {/* Left Column: Context */}
           <div>
             <motion.div
@@ -119,14 +119,14 @@ export default function Contact() {
                 </span>
               </h1>
 
-              <p className="text-lg md:text-xl text-black/60 max-w-lg leading-relaxed mb-16">
+              <p className="text-lg md:text-xl text-black/60 max-w-lg leading-relaxed mb-12 lg:mb-16">
                 Tell us about your challenges. We prefer clear problems over
                 fancy specs. Whether you need a full system overhaul or a
                 scalability audit, we are ready to listen.
               </p>
 
-              <div className="hidden lg:block">
-                <div className="flex flex-col gap-8 text-sm text-black/80 font-mono">
+              <div className="block">
+                <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 text-sm text-black/80 font-mono mb-12 lg:mb-0">
                   <div>
                     <p className="text-xs uppercase tracking-widest opacity-50 mb-2">
                       Email us directly
@@ -143,7 +143,7 @@ export default function Contact() {
                       Office
                     </p>
                     <p>
-                      Ratnapura, SG
+                      Ratnapura
                       <br />
                       Sri Lanka
                     </p>
@@ -311,7 +311,7 @@ export default function Contact() {
                       />
                     </div>
 
-                    <div className="pt-4 flex items-center justify-between">
+                    <div className="pt-4 flex md:flex-row flex-col gap-y-6 items-center justify-between">
                       <div className="flex flex-col gap-2">
                         <input
                           type="file"
@@ -356,7 +356,7 @@ export default function Contact() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="group flex items-center gap-3 bg-(--primary) text-white px-8 py-4 rounded-full text-xs font-mono uppercase tracking-[0.2em] hover:opacity-90 transition-all disabled:opacity-50"
+                        className="w-full md:w-auto justify-center group flex items-center gap-3 bg-(--primary) text-white px-8 py-4 rounded-full text-xs font-mono uppercase tracking-[0.2em] hover:opacity-90 transition-all disabled:opacity-50"
                       >
                         {isSubmitting ? (
                           <>

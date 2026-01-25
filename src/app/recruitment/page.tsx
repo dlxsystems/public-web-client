@@ -156,7 +156,7 @@ export default function RecruitmentPrivacyNotice() {
             <br />
             <strong>Email:</strong> legal@dlxsystems.com
             <br />
-            <strong>Address:</strong> Colombo, Sri Lanka
+            <strong>Address:</strong> Ratnapura, Sri Lanka
           </p>
         </article>
       </div>

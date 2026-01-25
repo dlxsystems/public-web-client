@@ -126,7 +126,7 @@ export default function TermsOfService() {
             These Terms are governed by and construed in accordance with the
             laws of Sri Lanka, without regard to conflict of law principles. Any
             disputes arising from or relating to these Terms shall be subject to
-            the exclusive jurisdiction of the courts of Colombo, Sri Lanka.
+            the exclusive jurisdiction of the courts of Ratnapura, Sri Lanka.
           </p>
 
           <h2>10. Changes to These Terms</h2>
@@ -144,7 +144,7 @@ export default function TermsOfService() {
             <br />
             <strong>Email:</strong> legal@dlxsystems.com
             <br />
-            <strong>Address:</strong> Colombo, Sri Lanka
+            <strong>Address:</strong> Ratnapura, Sri Lanka
           </p>
         </article>
       </div>

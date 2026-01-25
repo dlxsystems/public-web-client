@@ -101,6 +101,7 @@ export function Navbar() {
                   src="/assets/images/logo-full.png"
                   alt="dlx systems"
                   fill
+                  unoptimized
                   className="object-contain"
                   sizes="150px"
                 />
