@@ -138,7 +138,6 @@ export function WorkCard({ study }: { study: CaseStudyItem }) {
           src={study.image}
           alt={study.title}
           fill
-          unoptimized
           sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover rounded-[32px] md:rounded-[48px] transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105 blur-[1px] opacity-80 group-hover:opacity-60"
         />
@@ -171,7 +170,6 @@ export function TeamCard({ member }: { member: TeamMemberItem }) {
           src={member.image}
           alt={member.name}
           fill
-          unoptimized
           sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover rounded-[48px] transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105 opacity-100"
         />
@@ -242,7 +240,6 @@ export function InsightCard({ post }: { post: BlogPostItem }) {
           src={post.image}
           alt={post.title}
           fill
-          unoptimized
           sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105 opacity-70 group-hover:opacity-60"
         />
@@ -337,7 +334,6 @@ export function CustomerStoryCard({ story }: { story: CustomerStoryItem }) {
                   src={story.image}
                   alt={story.author}
                   fill
-                  unoptimized
                   sizes="80px"
                   className="object-cover"
                 />

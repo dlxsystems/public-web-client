@@ -37,7 +37,5 @@ export function SectionHeader({
   children: React.ReactNode;
   className?: string;
 }) {
-  return (
-    <section className={`mb-20 max-w-4xl ${className}`}>{children}</section>
-  );
+  return <header className={`mb-20 max-w-4xl ${className}`}>{children}</header>;
 }
