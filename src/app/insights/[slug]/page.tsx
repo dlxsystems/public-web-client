@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IconArrowLeft, IconClock, IconCalendar } from "@tabler/icons-react";
 import { blogPosts } from "../../config/data";
+import { Metadata } from "next";
 
 interface Props {
   params: Promise<{
@@ -14,6 +15,25 @@ export function generateStaticParams() {
   return blogPosts.map((post) => ({
     slug: post.slug,
   }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
+  if (!post) return {};
+
+  return {
+    title: post.title,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      publishedTime: post.date,
+      authors: [post.author],
+      images: [post.image],
+    },
+  };
 }
 
 export default async function InsightDetail({ params }: Props) {
@@ -33,8 +53,35 @@ export default async function InsightDetail({ params }: Props) {
     });
   };
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    image: [post.image],
+    datePublished: post.date,
+    author: [
+      {
+        "@type": "Person",
+        name: post.author,
+      },
+    ],
+    publisher: {
+      "@type": "Organization",
+      name: "DLX Systems",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.dlxsystems.com/assets/images/logo.png",
+      },
+    },
+    description: post.description,
+  };
+
   return (
     <main className="min-h-screen bg-transparent">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Article Header */}
       <header className={`relative pt-40 pb-20 px-6 md:px-0 ${post.bg}`}>
         <div className="mx-auto max-w-3xl">
@@ -67,7 +114,6 @@ export default async function InsightDetail({ params }: Props) {
                     alt={post.author}
                     fill
                     sizes="40px"
-                    unoptimized
                     className="object-cover"
                   />
                 </div>
@@ -98,7 +144,6 @@ export default async function InsightDetail({ params }: Props) {
             alt={post.title}
             fill
             sizes="(max-width: 1024px) 100vw, 1024px"
-            unoptimized
             className="object-cover"
             priority
           />
@@ -135,7 +180,6 @@ export default async function InsightDetail({ params }: Props) {
                 alt={post.author}
                 fill
                 sizes="80px"
-                unoptimized
                 className="object-cover"
               />
             </div>

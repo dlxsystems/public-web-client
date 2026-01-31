@@ -68,6 +68,7 @@ export default function Home() {
 
   return (
     <div className="relative">
+      {/* HERO SECTION */}
       <section className="relative">
         <motion.div
           style={{ padding: framePadding, opacity: videoOpacity }}
@@ -104,6 +105,7 @@ export default function Home() {
 
               <Link
                 href="/about"
+                title="Learn more about DLX Systems"
                 className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-medium text-white hover:bg-white/10 transition cursor-pointer"
               >
                 Learn more
@@ -134,7 +136,7 @@ export default function Home() {
         <div className="relative z-10 h-screen" />
 
         {/* STATS SECTION */}
-        <div className="relative z-30 bg-transparent py-20 md:py-40">
+        <section className="relative z-30 bg-transparent py-20 md:py-40">
           <div className="mx-auto px-6 md:px-12 max-w-7xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16 text-center">
               {stats.map((stat, index) => (
@@ -147,11 +149,10 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
+        </section>
 
         {/* FIRST CONTENT SECTION — WHAT WE BUILD */}
-        {/* FIRST CONTENT SECTION — WHAT WE BUILD */}
-        <div
+        <section
           id="expertise"
           className="relative z-30 bg-transparent py-16 md:py-32 rounded-t-3xl"
         >
@@ -172,24 +173,27 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* CUSTOMER STORIES — CAROUSEL */}
-        <div className="relative z-30 bg-transparent py-16 md:py-32">
+        <section className="relative z-30 bg-transparent py-16 md:py-32">
           <div className="mx-auto px-10 md:px-32 text-black">
             <SectionHeader className="mb-10">
               <SectionBadge>CLIENT STORIES</SectionBadge>
               <SectionTitle className="text-4xl md:text-7xl">
-                What our clients' say
+                What our clients say
               </SectionTitle>
             </SectionHeader>
 
             <Story />
           </div>
-        </div>
+        </section>
 
         {/* CASE STUDIES */}
-        <div id="work" className="relative z-30 bg-transparent py-16 md:py-32">
+        <section
+          id="work"
+          className="relative z-30 bg-transparent py-16 md:py-32"
+        >
           <div className="mx-auto px-10 md:px-32 text-black">
             <SectionHeader>
               <SectionBadge>CASE STUDIES</SectionBadge>
@@ -205,10 +209,10 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
+        </section>
 
         {/* TEAM SECTION */}
-        <div
+        <section
           id="team"
           className="relative z-30 bg-transparent py-16 md:py-32 border-t border-black/5"
         >
@@ -227,10 +231,10 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
+        </section>
 
         {/* INSIGHTS / BLOG */}
-        <div
+        <section
           id="insights"
           className="relative z-30 bg-transparent py-16 md:py-32 border-t border-black/5"
         >
@@ -248,7 +252,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
+        </section>
       </section>
     </div>
   );

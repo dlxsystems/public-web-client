@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IconArrowLeft } from "@tabler/icons-react";
 import { caseStudies } from "../../config/data";
+import { Metadata } from "next";
 
 interface Props {
   params: Promise<{
@@ -16,6 +17,22 @@ export function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const study = caseStudies.find((s) => s.slug === slug);
+  if (!study) return {};
+
+  return {
+    title: study.title,
+    description: study.description,
+    openGraph: {
+      title: study.title,
+      description: study.description,
+      images: [study.imagePost],
+    },
+  };
+}
+
 export default async function WorkDetail({ params }: Props) {
   const { slug } = await params;
   const study = caseStudies.find((s) => s.slug === slug);
@@ -24,8 +41,37 @@ export default async function WorkDetail({ params }: Props) {
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.dlxsystems.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Work",
+        item: "https://www.dlxsystems.com/work",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: study.title,
+        item: `https://www.dlxsystems.com/work/${study.slug}`,
+      },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-transparent pt-40 pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mx-auto px-6 md:px-32 max-w-7xl">
         {/* Back Link */}
         <Link
@@ -63,7 +109,6 @@ export default async function WorkDetail({ params }: Props) {
             alt={study.title}
             fill
             sizes="100vw"
-            unoptimized
             className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
           />
         </div>

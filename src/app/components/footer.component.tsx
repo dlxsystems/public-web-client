@@ -33,16 +33,22 @@ export function Footer() {
                 Company
               </h4>
               <Link
+                href="/#expertise"
+                className="text-sm text-black/80 hover:text-black transition-colors"
+              >
+                Expertise
+              </Link>
+              <Link
                 href="/#work"
                 className="text-sm text-black/80 hover:text-black transition-colors"
               >
                 Work
               </Link>
               <Link
-                href="/#expertise"
+                href="/#team"
                 className="text-sm text-black/80 hover:text-black transition-colors"
               >
-                Expertise
+                Team
               </Link>
               <Link
                 href="/#insights"
