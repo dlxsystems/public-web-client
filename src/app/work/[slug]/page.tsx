@@ -49,19 +49,19 @@ export default async function WorkDetail({ params }: Props) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.dlxsystems.com",
+        item: "https://dlxsystems.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Work",
-        item: "https://www.dlxsystems.com/work",
+        item: "https://dlxsystems.com/work",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: study.title,
-        item: `https://www.dlxsystems.com/work/${study.slug}`,
+        item: `https://dlxsystems.com/work/${study.slug}`,
       },
     ],
   };
