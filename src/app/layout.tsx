@@ -163,7 +163,7 @@ export const foundersGroteskMono = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.dlxsystems.com"),
+  metadataBase: new URL("https://dlxsystems.com"),
   title: {
     default: "DLX Systems | Systems Architecture & Digital Transformation",
     template: "%s | DLX Systems",
@@ -179,12 +179,12 @@ export const metadata: Metadata = {
     "Platform Modernization",
     "Data Platforms",
   ],
-  authors: [{ name: "Chamod Nugekotuwa", url: "https://www.dlxsystems.com" }],
+  authors: [{ name: "Chamod Nugekotuwa", url: "https://dlxsystems.com" }],
   creator: "DLX Systems",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.dlxsystems.com",
+    url: "https://dlxsystems.com",
     title: "DLX Systems | Systems Architecture & Digital Transformation",
     description:
       "We build systems that scale ideas. Clean architecture, thoughtful engineering, and long-term impact.",
@@ -218,7 +218,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.dlxsystems.com",
+    canonical: "https://dlxsystems.com",
   },
 };
 
@@ -231,8 +231,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "DLX Systems",
-    url: "https://www.dlxsystems.com",
-    logo: "https://www.dlxsystems.com/assets/images/logo-full.png", // Update path if needed
+    url: "https://dlxsystems.com",
+    logo: "https://dlxsystems.com/assets/images/logo-full.png", // Update path if needed
     founder: {
       "@type": "Person",
       name: "Chamod Nugekotuwa",

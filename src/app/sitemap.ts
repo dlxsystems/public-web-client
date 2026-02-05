@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { caseStudies, blogPosts } from "./config/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.dlxsystems.com";
+  const baseUrl = "https://dlxsystems.com";
 
   const staticRoutes = [
     "",

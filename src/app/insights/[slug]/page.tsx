@@ -70,7 +70,7 @@ export default async function InsightDetail({ params }: Props) {
       name: "DLX Systems",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.dlxsystems.com/assets/images/logo.png",
+        url: "https://dlxsystems.com/assets/images/logo-full.png",
       },
     },
     description: post.description,
