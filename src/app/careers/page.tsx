@@ -16,6 +16,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { openPositions } from "../config/data";
 import { CustomSelect } from "../components/ui/custom-select.component";
+import { RevealWrapper, ParallaxWrapper } from "../components/ui/animation-wrappers";
 
 function JobCard({
   job,
@@ -125,7 +126,6 @@ function JobCard({
 }
 
 export default function Careers() {
-  // Same form state logic as Contact, but with extra fields
   const [selectedPosition, setSelectedPosition] = useState("");
   const [formState, setFormState] = useState<{
     name: string;
@@ -150,7 +150,6 @@ export default function Careers() {
   const [error, setError] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Scroll to form when applying
   const formRef = useRef<HTMLDivElement>(null);
 
   const handleApplyClick = (positionTitle: string) => {
@@ -212,35 +211,40 @@ export default function Careers() {
   return (
     <main className="min-h-screen bg-transparent text-black pt-40 pb-20">
       <div className="mx-auto px-6 md:px-32 max-w-7xl">
-        {/* Back Link */}
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-widest text-black/40 hover:text-black transition-colors mb-20"
-        >
-          <IconArrowLeft size={16} />
-          Back Home
-        </Link>
+        <RevealWrapper>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-widest text-black/40 hover:text-black transition-colors mb-20"
+          >
+            <IconArrowLeft size={16} />
+            Back Home
+          </Link>
+        </RevealWrapper>
 
-        {/* Header */}
         <section className="mb-32">
-          <span className="text-black/40 font-mono uppercase tracking-widest text-sm mb-4 block">
-            Join the team
-          </span>
-          <h1 className="text-5xl md:text-8xl font-semibold tracking-tighter mb-8 max-w-4xl">
-            Build systems that matter.
-          </h1>
-          <p className="text-xl text-black/60 max-w-2xl leading-relaxed">
-            We're a team of engineers, designers, and architects who believe in
-            craft, clarity, and code that lasts. If you're tired of "move fast
-            and break things," you'll fit right in.
-          </p>
+          <RevealWrapper>
+            <span className="text-black/40 font-mono uppercase tracking-widest text-sm mb-4 block">
+              Join the team
+            </span>
+            <ParallaxWrapper offset={20}>
+              <h1 className="text-5xl md:text-8xl font-semibold tracking-tighter mb-8 max-w-4xl text-shimmer">
+                Build systems that matter.
+              </h1>
+            </ParallaxWrapper>
+            <p className="text-xl text-black/60 max-w-2xl leading-relaxed">
+              We're a team of engineers, designers, and architects who believe in
+              craft, clarity, and code that lasts. If you're tired of "move fast
+              and break things," you'll fit right in.
+            </p>
+          </RevealWrapper>
         </section>
 
-        {/* Open Positions */}
         <section className="mb-32">
-          <h2 className="text-2xl font-medium mb-12 border-b border-black/10 pb-4">
-            Open Positions
-          </h2>
+          <RevealWrapper delay={0.2}>
+            <h2 className="text-2xl font-medium mb-12 border-b border-black/10 pb-4">
+              Open Positions
+            </h2>
+          </RevealWrapper>
 
           <div className="grid grid-cols-1 gap-6">
             {openPositions.map((job) => (
@@ -249,192 +253,193 @@ export default function Careers() {
           </div>
         </section>
 
-        {/* Application Form */}
-        <section ref={formRef} className="max-w-3xl mx-auto">
-          <div className="bg-white/60 backdrop-blur-xl border border-black/5 rounded-[40px] p-8 md:p-16 shadow-2xl shadow-black/5 relative">
-            <h2 className="text-3xl font-medium mb-2">Apply for a role</h2>
-            <p className="text-black/50 mb-10">
-              Tell us about yourself and why you'd be a great fit.
-            </p>
+        <RevealWrapper delay={0.4}>
+          <section ref={formRef} className="max-w-3xl mx-auto">
+            <div className="bg-white/60 backdrop-blur-xl border border-black/5 rounded-[40px] p-8 md:p-16 shadow-2xl shadow-black/5 relative">
+              <h2 className="text-3xl font-medium mb-2">Apply for a role</h2>
+              <p className="text-black/50 mb-10">
+                Tell us about yourself and why you'd be a great fit.
+              </p>
 
-            <AnimatePresence mode="wait">
-              {isSuccess ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-center justify-center text-center py-20"
-                >
-                  <div className="w-20 h-20 bg-emerald-500 rounded-full flex items-center justify-center text-white mb-8 shadow-lg shadow-emerald-500/30">
-                    <IconCheck size={40} />
-                  </div>
-                  <h3 className="text-3xl font-medium mb-4 text-zinc-900">
-                    Application received.
-                  </h3>
-                  <p className="text-black/50 max-w-xs mx-auto mb-8">
-                    Thanks for your interest. We'll review your application and
-                    be in touch soon.
-                  </p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-8">
-                  <div className="space-y-2">
-                    <label className="text-xs font-mono uppercase tracking-widest text-black/40">
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formState.name}
-                      onChange={(e) =>
-                        setFormState({ ...formState, name: e.target.value })
-                      }
-                      className="w-full bg-transparent border-b border-black/10 py-3 text-lg focus:outline-none focus:border-black/40 transition-colors"
-                      placeholder="Jane Doe"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-2">
-                      <label className="text-xs font-mono uppercase tracking-widest text-black/40">
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={formState.email}
-                        onChange={(e) =>
-                          setFormState({ ...formState, email: e.target.value })
-                        }
-                        className="w-full bg-transparent border-b border-black/10 py-3 text-lg focus:outline-none focus:border-black/40 transition-colors"
-                        placeholder="jane@example.com"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-mono uppercase tracking-widest text-black/40">
-                        Position
-                      </label>
-                      <CustomSelect
-                        value={formState.position}
-                        options={openPositions.map((p) => p.title)}
-                        placeholder="Select a role"
-                        onChange={(val) =>
-                          setFormState({ ...formState, position: val })
-                        }
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-2">
-                      <label className="text-xs font-mono uppercase tracking-widest text-black/40">
-                        LinkedIn URL
-                      </label>
-                      <input
-                        type="url"
-                        value={formState.linkedin}
-                        onChange={(e) =>
-                          setFormState({
-                            ...formState,
-                            linkedin: e.target.value,
-                          })
-                        }
-                        className="w-full bg-transparent border-b border-black/10 py-3 text-lg focus:outline-none focus:border-black/40 transition-colors"
-                        placeholder="linkedin.com/in/jane"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-mono uppercase tracking-widest text-black/40">
-                        Portfolio / GitHub
-                      </label>
-                      <input
-                        type="url"
-                        value={formState.portfolio}
-                        onChange={(e) =>
-                          setFormState({
-                            ...formState,
-                            portfolio: e.target.value,
-                          })
-                        }
-                        className="w-full bg-transparent border-b border-black/10 py-3 text-lg focus:outline-none focus:border-black/40 transition-colors"
-                        placeholder="github.com/jane"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-xs font-mono uppercase tracking-widest text-black/40">
-                      Resume / CV
-                    </label>
-                    <div className="pt-2">
-                      <input
-                        type="file"
-                        ref={fileInputRef}
-                        className="hidden"
-                        onChange={handleFileChange}
-                        accept=".pdf,.doc,.docx"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => fileInputRef.current?.click()}
-                        className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-black/40 hover:text-emerald-600 transition-colors border border-black/10 px-4 py-3 rounded-lg hover:border-emerald-600 w-full"
-                      >
-                        <IconPaperclip size={16} />
-                        {formState.attachment
-                          ? "Change Resume"
-                          : "Attach Resume (PDF/DOC)"}
-                      </button>
-                      {error && (
-                        <p className="text-red-500 text-xs mt-2">{error}</p>
-                      )}
-                      {formState.attachment && (
-                        <div className="flex items-center gap-2 text-xs text-emerald-600 font-mono mt-2">
-                          <IconCheck size={14} />
-                          <span className="truncate">
-                            {formState.attachment.name}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-xs font-mono uppercase tracking-widest text-black/40">
-                      Why DLX?
-                    </label>
-                    <textarea
-                      rows={4}
-                      required
-                      value={formState.message}
-                      onChange={(e) =>
-                        setFormState({ ...formState, message: e.target.value })
-                      }
-                      className="w-full bg-transparent border-b border-black/10 py-3 text-lg focus:outline-none focus:border-black/40 transition-colors resize-none"
-                      placeholder="Tell us why you want to join..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-(--primary) text-white text-sm font-mono uppercase tracking-widest py-4 rounded-full hover:opacity-90 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed mt-8"
+              <AnimatePresence mode="wait">
+                {isSuccess ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="flex flex-col items-center justify-center text-center py-20"
                   >
-                    {isSubmitting ? (
-                      <>
-                        <IconLoader2 className="animate-spin" size={16} />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        Submit Application
-                        <IconArrowRight size={16} />
-                      </>
-                    )}
-                  </button>
-                </form>
-              )}
-            </AnimatePresence>
-          </div>
-        </section>
+                    <div className="w-20 h-20 bg-emerald-500 rounded-full flex items-center justify-center text-white mb-8 shadow-lg shadow-emerald-500/30">
+                      <IconCheck size={40} />
+                    </div>
+                    <h3 className="text-3xl font-medium mb-4 text-zinc-900">
+                      Application received.
+                    </h3>
+                    <p className="text-black/50 max-w-xs mx-auto mb-8">
+                      Thanks for your interest. We'll review your application and
+                      be in touch soon.
+                    </p>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="space-y-2">
+                      <label className="text-xs font-mono uppercase tracking-widest text-black/40">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formState.name}
+                        onChange={(e) =>
+                          setFormState({ ...formState, name: e.target.value })
+                        }
+                        className="w-full bg-transparent border-b border-black/10 py-3 text-lg focus:outline-none focus:border-black/40 transition-colors"
+                        placeholder="Jane Doe"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="space-y-2">
+                        <label className="text-xs font-mono uppercase tracking-widest text-black/40">
+                          Email Address
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          value={formState.email}
+                          onChange={(e) =>
+                            setFormState({ ...formState, email: e.target.value })
+                          }
+                          className="w-full bg-transparent border-b border-black/10 py-3 text-lg focus:outline-none focus:border-black/40 transition-colors"
+                          placeholder="jane@example.com"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-xs font-mono uppercase tracking-widest text-black/40">
+                          Position
+                        </label>
+                        <CustomSelect
+                          value={formState.position}
+                          options={openPositions.map((p) => p.title)}
+                          placeholder="Select a role"
+                          onChange={(val) =>
+                            setFormState({ ...formState, position: val })
+                          }
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="space-y-2">
+                        <label className="text-xs font-mono uppercase tracking-widest text-black/40">
+                          LinkedIn URL
+                        </label>
+                        <input
+                          type="url"
+                          value={formState.linkedin}
+                          onChange={(e) =>
+                            setFormState({
+                              ...formState,
+                              linkedin: e.target.value,
+                            })
+                          }
+                          className="w-full bg-transparent border-b border-black/10 py-3 text-lg focus:outline-none focus:border-black/40 transition-colors"
+                          placeholder="linkedin.com/in/jane"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-xs font-mono uppercase tracking-widest text-black/40">
+                          Portfolio / GitHub
+                        </label>
+                        <input
+                          type="url"
+                          value={formState.portfolio}
+                          onChange={(e) =>
+                            setFormState({
+                              ...formState,
+                              portfolio: e.target.value,
+                            })
+                          }
+                          className="w-full bg-transparent border-b border-black/10 py-3 text-lg focus:outline-none focus:border-black/40 transition-colors"
+                          placeholder="github.com/jane"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="text-xs font-mono uppercase tracking-widest text-black/40">
+                        Resume / CV
+                      </label>
+                      <div className="pt-2">
+                        <input
+                          type="file"
+                          ref={fileInputRef}
+                          className="hidden"
+                          onChange={handleFileChange}
+                          accept=".pdf,.doc,.docx"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => fileInputRef.current?.click()}
+                          className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-black/40 hover:text-emerald-600 transition-colors border border-black/10 px-4 py-3 rounded-lg hover:border-emerald-600 w-full"
+                        >
+                          <IconPaperclip size={16} />
+                          {formState.attachment
+                            ? "Change Resume"
+                            : "Attach Resume (PDF/DOC)"}
+                        </button>
+                        {error && (
+                          <p className="text-red-500 text-xs mt-2">{error}</p>
+                        )}
+                        {formState.attachment && (
+                          <div className="flex items-center gap-2 text-xs text-emerald-600 font-mono mt-2">
+                            <IconCheck size={14} />
+                            <span className="truncate">
+                              {formState.attachment.name}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="text-xs font-mono uppercase tracking-widest text-black/40">
+                        Why DLX?
+                      </label>
+                      <textarea
+                        rows={4}
+                        required
+                        value={formState.message}
+                        onChange={(e) =>
+                          setFormState({ ...formState, message: e.target.value })
+                        }
+                        className="w-full bg-transparent border-b border-black/10 py-3 text-lg focus:outline-none focus:border-black/40 transition-colors resize-none"
+                        placeholder="Tell us why you want to join..."
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-(--primary) text-white text-sm font-mono uppercase tracking-widest py-4 rounded-full hover:opacity-90 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed mt-8"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <IconLoader2 className="animate-spin" size={16} />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Submit Application
+                          <IconArrowRight size={16} />
+                        </>
+                      )}
+                    </button>
+                  </form>
+                )}
+              </AnimatePresence>
+            </div>
+          </section>
+        </RevealWrapper>
       </div>
     </main>
   );

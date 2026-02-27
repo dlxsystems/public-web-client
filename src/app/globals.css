@@ -34,21 +34,53 @@ body {
   scroll-behavior: auto;
 }
 
-::-webkit-scrollbar {
-  /* display: none; */
+@media (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  .cursor-pointer {
+    cursor: none !important;
+  }
 }
 
-/* Kill default slick UI noise */
-.slick-dots,
-.slick-arrow {
-  display: none !important;
+.text-shimmer {
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.4) 50%,
+    rgba(0,0,0,1) 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shimmer 3s linear infinite;
 }
 
-.slick-track {
-  display: flex !important;
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: -200% center; }
 }
 
-.slick-slide {
-  height: auto;
-  will-change: transform;
+/* Lenis smooth scroll core styles */
+html.lenis,
+html.lenis-scrolling {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

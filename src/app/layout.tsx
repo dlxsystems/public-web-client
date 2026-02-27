@@ -7,6 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 import SmoothScroll from "./util/smooth-scroll";
 import { Navbar } from "./components/navbar.component";
 import { Footer } from "./components/footer.component";
+import { CustomCursor } from "./components/ui/custom-cursor.component";
+import { BackgroundParallax } from "./components/ui/background-parallax.component";
 
 export const foundersGrotesk = localFont({
   src: [
@@ -254,18 +256,17 @@ export default function RootLayout({
       className={`${foundersGrotesk.variable} ${foundersGroteskText.variable} ${foundersGroteskMono.variable}`}
     >
       <body className="antialiased bg-white/60">
+        <CustomCursor />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none -z-50 bg-white">
-          <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-indigo-50/80 rounded-full blur-[120px] mix-blend-multiply opacity-50 animate-pulse" />
-          <div className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-emerald-50/80 rounded-full blur-[120px] mix-blend-multiply opacity-50 animate-pulse delay-700" />
-          <div className="absolute bottom-[-10%] left-[20%] w-[60vw] h-[60vw] bg-sky-50/80 rounded-full blur-[120px] mix-blend-multiply opacity-50 animate-pulse delay-1000" />
-        </div>
-        <Navbar />
-        <SmoothScroll>{children}</SmoothScroll>
-        <Footer />
+        <BackgroundParallax />
+        <SmoothScroll>
+          <Navbar />
+          {children}
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

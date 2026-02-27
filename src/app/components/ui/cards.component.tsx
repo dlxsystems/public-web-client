@@ -78,20 +78,22 @@ export function ServiceCard({ service }: { service: ServiceItem }) {
 
   return (
     <div
-      className={`relative min-h-[360px] md:min-h-[400px] md:h-[450px] rounded-[32px] md:rounded-[48px] overflow-hidden ${service.bg} p-6 md:p-10 flex flex-col justify-between transition-transform duration-700 hover:scale-[1.01]`}
+      className={`relative min-h-[360px] md:min-h-[400px] md:h-[450px] rounded-[32px] md:rounded-[48px] overflow-hidden ${service.bg} p-8 md:p-12 flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] hover:shadow-2xl hover:shadow-black/10 group`}
     >
       <div className={`flex items-start justify-between ${service.text}`}>
-        <Icon size={48} stroke={1} className="md:w-14 md:h-14" />
-        <span className="text-5xl md:text-6xl font-extralight tracking-tighter opacity-20">
+        <div className="p-4 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 group-hover:scale-110 transition-transform duration-500">
+          <Icon size={40} stroke={1.5} className="md:w-10 md:h-10" />
+        </div>
+        <span className="text-5xl md:text-7xl font-extralight tracking-tighter opacity-10 group-hover:opacity-20 transition-opacity duration-500">
           {service.id}
         </span>
       </div>
 
       <div>
-        <h4 className="text-3xl md:text-5xl font-medium tracking-tighter text-[#1d1d1f] mb-4 md:mb-6 leading-[1.05]">
+        <h4 className="text-3xl md:text-5xl font-medium tracking-tighter text-[#1d1d1f] mb-4 md:mb-6 leading-none transition-transform duration-500 group-hover:-translate-y-1">
           {service.title}
         </h4>
-        <p className="text-sm md:text-md text-[#1d1d1f]/70 leading-snug font-mono">
+        <p className="text-sm md:text-base text-[#1d1d1f]/70 leading-relaxed font-mono opacity-80 group-hover:opacity-100 transition-opacity duration-500">
           {service.description}
         </p>
       </div>

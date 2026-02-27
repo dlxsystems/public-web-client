@@ -112,20 +112,35 @@ export default function Contact() {
                 Open for new projects
               </div>
 
-              <h1 className="text-5xl md:text-8xl font-semibold tracking-tighter mb-8 text-zinc-900 leading-[0.9]">
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-5xl md:text-8xl font-semibold tracking-tighter mb-8 text-zinc-900 leading-[0.9] text-shimmer"
+              >
                 Let's build <br />
                 <span className="text-black/40 italic font-light">
                   something real.
                 </span>
-              </h1>
+              </motion.h1>
 
-              <p className="text-lg md:text-xl text-black/60 max-w-lg leading-relaxed mb-12 lg:mb-16">
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-lg md:text-xl text-black/60 max-w-lg leading-relaxed mb-12 lg:mb-16"
+              >
                 Tell us about your challenges. We prefer clear problems over
                 fancy specs. Whether you need a full system overhaul or a
                 scalability audit, we are ready to listen.
-              </p>
+              </motion.p>
 
-              <div className="block">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="block"
+              >
                 <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 text-sm text-black/80 font-mono mb-12 lg:mb-0">
                   <div>
                     <p className="text-xs uppercase tracking-widest opacity-50 mb-2">
@@ -149,7 +164,7 @@ export default function Contact() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
 

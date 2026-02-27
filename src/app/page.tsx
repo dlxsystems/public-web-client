@@ -17,6 +17,7 @@ import {
   SectionTitle,
   SectionHeader,
 } from "./components/ui/section.component";
+import { ParallaxWrapper, RevealWrapper } from "./components/ui/animation-wrappers";
 import {
   ServiceCard,
   WorkCard,
@@ -93,8 +94,9 @@ export default function Home() {
               style={{ y: textExitY }}
               className="absolute bottom-32 left-6 right-6 md:bottom-24 md:left-24 md:right-auto max-w-xl text-white"
             >
-              <h1 className="text-5xl md:text-8xl font-semibold mb-6">
-                We build systems that scale ideas.
+              <h1 className="text-5xl md:text-8xl font-semibold mb-6 tracking-tighter leading-[0.9]">
+                We build systems <br />
+                <span className="text-white/40 italic font-light">that scale ideas.</span>
               </h1>
 
               <p className="text-lg text-white/80 leading-relaxed mb-6">
@@ -103,13 +105,19 @@ export default function Home() {
                 confidence.
               </p>
 
-              <Link
-                href="/about"
-                title="Learn more about DLX Systems"
-                className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-medium text-white hover:bg-white/10 transition cursor-pointer"
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block"
               >
-                Learn more
-              </Link>
+                <Link
+                  href="/about"
+                  title="Learn more about DLX Systems"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/30 px-8 py-4 text-sm font-medium text-white hover:bg-white/10 hover:border-white transition-all cursor-pointer"
+                >
+                  Learn more
+                </Link>
+              </motion.div>
             </motion.div>
 
             <motion.div
@@ -138,7 +146,13 @@ export default function Home() {
         {/* STATS SECTION */}
         <section className="relative z-30 bg-transparent py-20 md:py-40">
           <div className="mx-auto px-6 md:px-12 max-w-7xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16 text-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16 text-center"
+            >
               {stats.map((stat, index) => (
                 <div key={index}>
                   <Counter value={stat.value} suffix={stat.suffix} />
@@ -147,22 +161,34 @@ export default function Home() {
                   </p>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* FIRST CONTENT SECTION — WHAT WE BUILD */}
-        <section
+        <motion.section
           id="expertise"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1 }}
           className="relative z-30 bg-transparent py-16 md:py-32 rounded-t-3xl"
         >
           <div className="mx-auto px-10 md:px-32 text-black">
             <SectionHeader>
               <SectionBadge>OUR EXPERTISE</SectionBadge>
-              <SectionTitle className="mb-8">What we offer</SectionTitle>
+              <ParallaxWrapper offset={30}>
+                <SectionTitle className="mb-8 text-shimmer">What we offer</SectionTitle>
+              </ParallaxWrapper>
             </SectionHeader>
 
-            <div className="space-y-6">
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-6"
+            >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {services.map((service) => (
                   <ServiceCard
@@ -171,33 +197,47 @@ export default function Home() {
                   />
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
 
         {/* CUSTOMER STORIES — CAROUSEL */}
-        <section className="relative z-30 bg-transparent py-16 md:py-32">
+        <motion.section 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="relative z-30 bg-transparent py-16 md:py-32"
+        >
           <div className="mx-auto px-10 md:px-32 text-black">
             <SectionHeader className="mb-10">
               <SectionBadge>CLIENT STORIES</SectionBadge>
-              <SectionTitle className="text-4xl md:text-7xl">
-                What our clients say
-              </SectionTitle>
+              <ParallaxWrapper offset={40}>
+                <SectionTitle className="text-4xl md:text-7xl text-shimmer">
+                  What our clients say
+                </SectionTitle>
+              </ParallaxWrapper>
             </SectionHeader>
 
             <Story />
           </div>
-        </section>
+        </motion.section>
 
         {/* CASE STUDIES */}
-        <section
+        <motion.section
           id="work"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
           className="relative z-30 bg-transparent py-16 md:py-32"
         >
           <div className="mx-auto px-10 md:px-32 text-black">
             <SectionHeader>
               <SectionBadge>CASE STUDIES</SectionBadge>
-              <SectionTitle>Recent Work</SectionTitle>
+              <ParallaxWrapper offset={30}>
+                <SectionTitle className="text-shimmer">Recent Work</SectionTitle>
+              </ParallaxWrapper>
             </SectionHeader>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -209,17 +249,23 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* TEAM SECTION */}
-        <section
+        <motion.section
           id="team"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
           className="relative z-30 bg-transparent py-16 md:py-32 border-t border-black/5"
         >
           <div className="px-10 md:px-32 text-black max-w-7xl mx-auto">
             <SectionHeader className="mx-auto text-center flex flex-col items-center">
               <SectionBadge>TEAM</SectionBadge>
-              <SectionTitle>Leadership</SectionTitle>
+              <ParallaxWrapper offset={20}>
+                <SectionTitle className="text-shimmer">Leadership</SectionTitle>
+              </ParallaxWrapper>
             </SectionHeader>
 
             <div className="flex flex-wrap justify-center gap-12 md:gap-20">
@@ -231,18 +277,24 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* INSIGHTS / BLOG */}
-        <section
+        <motion.section
           id="insights"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
           className="relative z-30 bg-transparent py-16 md:py-32 border-t border-black/5"
         >
           <div className="mx-auto px-10 md:px-32 text-black">
             <header className="mb-24 flex flex-col items-start gap-6 md:flex-row md:justify-between md:items-end">
               <div className="max-w-4xl">
                 <SectionBadge className="px-3">Insights</SectionBadge>
-                <SectionTitle>How we think</SectionTitle>
+                <ParallaxWrapper offset={30}>
+                  <SectionTitle className="text-shimmer">How we think</SectionTitle>
+                </ParallaxWrapper>
               </div>
             </header>
 
@@ -252,7 +304,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </motion.section>
       </section>
     </div>
   );
