@@ -4,13 +4,12 @@ import { useState, useRef } from "react";
 import {
   IconArrowRight,
   IconCheck,
-  IconChevronDown,
   IconLoader2,
   IconPaperclip,
 } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect } from "react";
 import { CustomSelect } from "../components/ui/custom-select.component";
+import { services as allServices, budgetRanges } from "../config/data";
 
 export default function Contact() {
   const [formState, setFormState] = useState<{
@@ -86,15 +85,8 @@ export default function Contact() {
     }
   };
 
-  const services = [
-    "System Architecture",
-    "Product Engineering",
-    "Cloud Infrastructure",
-    "Platform Modernization",
-    "Other",
-  ];
-
-  const budgets = ["< $2k", "$2k - $5k", "$5k - $10k", "$10k+"];
+  const services = [...allServices.map((s) => s.title), "Other"];
+  const budgets = budgetRanges;
 
   return (
     <main className="relative min-h-screen pt-32 pb-20 overflow-hidden">
@@ -278,7 +270,7 @@ export default function Contact() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 gap-8">
                       <div className="space-y-2 relative">
                         <label className="text-xs font-mono uppercase tracking-widest text-black/40">
                           Service

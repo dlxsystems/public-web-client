@@ -56,7 +56,8 @@ export function CustomSelect({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute z-50 left-0 right-0 mt-2 py-2 bg-white/80 backdrop-blur-xl border border-black/5 rounded-2xl shadow-2xl shadow-black/5 overflow-hidden max-h-60 overflow-y-auto"
+            className="absolute z-50 left-0 right-0 mt-2 py-2 bg-white/80 backdrop-blur-xl border border-black/5 rounded-2xl shadow-2xl shadow-black/5 max-h-60 overflow-y-auto"
+            data-lenis-prevent
           >
             {options.map((option) => (
               <button

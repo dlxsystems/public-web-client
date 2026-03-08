@@ -30,4 +30,5 @@ export const {
   team,
   openPositions,
   stats,
+  budgetRanges,
 } = content;

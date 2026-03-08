@@ -39,6 +39,11 @@ body {
   body,
   a,
   button,
+  input,
+  textarea,
+  select,
+  label,
+  [role="button"],
   .cursor-pointer {
     cursor: none !important;
   }

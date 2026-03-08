@@ -2,52 +2,59 @@
   "services": [
     {
       "id": "01",
-      "title": "System Architecture",
-      "description": "Clean structures that evolve and adapt without collapse.",
-      "icon": "IconBuildingBridge",
-      "bg": "bg-amber-500/40",
-      "text": "text-amber-900"
-    },
-    {
-      "id": "02",
-      "title": "Design & Intelligence",
-      "description": "Thoughtful interfaces and data-driven decisions.",
-      "icon": "IconFilters",
-      "bg": "bg-violet-500/40",
-      "text": "text-violet-900"
-    },
-    {
-      "id": "03",
-      "title": "Product Engineering",
-      "description": "End-to-end systems engineered for longevity, performance, and clarity.",
+      "title": "Custom Software Development",
+      "description": "End-to-end engineering of scalable web and mobile applications with a focus on performance and maintainability.",
       "icon": "IconAssembly",
       "bg": "bg-sky-500/40",
       "text": "text-sky-900"
     },
     {
-      "id": "04",
-      "title": "Cloud & Infrastructure",
-      "description": "Scalable, secure infrastructure designed for real-world production.",
+      "id": "02",
+      "title": "Cloud Infrastructure & DevOps",
+      "description": "Designing secure, high-availability cloud architectures and automated deployment pipelines for zero-downtime scaling.",
       "icon": "IconCloudCog",
       "bg": "bg-lime-500/40",
       "text": "text-lime-900"
     },
     {
-      "id": "05",
-      "title": "Data Platforms",
-      "description": "Reliable data pipelines and platforms that support insight and growth.",
+      "id": "03",
+      "title": "System Architecture & Strategy",
+      "description": "Technical blueprints and strategic planning to ensure your platform grows without technical debt or structural collapse.",
+      "icon": "IconBuildingBridge",
+      "bg": "bg-amber-500/40",
+      "text": "text-amber-900"
+    },
+    {
+      "id": "04",
+      "title": "AI & Intelligent Systems",
+      "description": "Integrating LLMs, predictive modeling, and data-driven intelligence into your core product workflows.",
       "icon": "IconDatabase",
       "bg": "bg-rose-500/40",
       "text": "text-rose-900"
     },
     {
-      "id": "06",
-      "title": "Platform Modernization",
-      "description": "Refactoring and re-architecture of existing systems without disruption.",
+      "id": "05",
+      "title": "Legacy Modernization",
+      "description": "Systematic refactoring and migration of legacy systems to modern stacks without disrupting active business operations.",
       "icon": "IconRefreshDot",
       "bg": "bg-emerald-500/40",
       "text": "text-emerald-900"
+    },
+    {
+      "id": "06",
+      "title": "UX/UI & Product Design",
+      "description": "Functional, high-fidelity design systems that bridge the gap between complex engineering and human intuition.",
+      "icon": "IconFilters",
+      "bg": "bg-violet-500/40",
+      "text": "text-violet-900"
     }
+  ],
+  "budgetRanges": [
+    "$1,000 - $2,000",
+    "$2,000 - $5,000",
+    "$5,000 - $10,000",
+    "$10,000 - $20,000",
+    "$20,000+"
   ],
   "customerStories": [
     {
